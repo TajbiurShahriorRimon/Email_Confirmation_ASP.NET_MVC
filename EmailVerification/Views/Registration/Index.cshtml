@@ -99,9 +99,9 @@
     function SignUp() {
         $("#ShowModal").modal();
 
-        //We Have to hide
+        //When the registration Modal pops up, we have to hide the follwoing messages.
         $("#message1").hide();
-        $("$message2").hide
+        $("#message2").hide();
     }
 
     function SaveForm() {
@@ -114,9 +114,14 @@
             data: data,
             url: "/Registration/SaveData",
             success: function (result) {
+                //After successful registration alert message is shown.
                 alert(result);
+
+                //After successful registration Success message is shown in the registration form and Error message is hidden.
                 $("#message1").show();
                 $("#message2").hide();
+
+                //After successful registration the Registration form Modal input fields are reset.
                 $("#Registration")[0].reset();
             }
         });
